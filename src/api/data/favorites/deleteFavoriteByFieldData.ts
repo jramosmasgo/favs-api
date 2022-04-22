@@ -5,7 +5,6 @@ import getFavoriteByFieldData from "./getFavoriteByFieldData";
 const deleteFavoriteByFieldData = async (field: Object): Promise<boolean> => {
   try {
     const favoritefound = await getFavoriteByFieldData({ ...field });
-
     if (!favoritefound) throw new Error("Favorite not Found");
 
     await favoriteModel.deleteOne({ ...field });

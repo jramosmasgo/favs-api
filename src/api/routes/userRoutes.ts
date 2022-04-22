@@ -14,7 +14,7 @@ router.post(
 );
 
 router.post(
-  "/user/login",
+  "/local/login",
   contentValidator(loginUserValidator),
   loginUserController
 );

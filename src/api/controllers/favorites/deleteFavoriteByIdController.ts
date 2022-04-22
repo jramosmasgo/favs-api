@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from "express";
+import deleteFavoriteByFieldService from "../../services/favorites/deleteFavoriteByFieldService";
 import ResponseApi from "../../core/responseApi";
-import deleteFavoriteByFieldService from "../../services/favorites/deletefavoriteByFieldService";
 
 const deleteFavoriteByIdController = async (
   req: Request<{ id: string }, {}, {}>,

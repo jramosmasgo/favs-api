@@ -1,17 +1,11 @@
 import createUserData from "../../../src/api/data/user/createUserData";
-import { User } from "../../../src/api/interfaces/user";
 import UserModel from "../../../src/api/models/userModel";
+import { mockUser } from "./userMocks";
 
 const userModelMock = UserModel as jest.MockedClass<typeof UserModel>;
 
-const mockUser: User = {
-  email: "ramosmasgo@gmail.com",
-  name: "Jean Ramos Masgo",
-  password: "123456",
-};
-
 describe("create user in data layer", () => {
-  it("should return error when passsing a bad object", async () => {
+  it("should return error when create error", async () => {
     userModelMock.create = jest.fn().mockImplementation(() => {
       throw new Error("error on create model user");
     });
@@ -22,7 +16,7 @@ describe("create user in data layer", () => {
     }
   });
 
-  it("should return on calles function", async () => {
+  it("should return an user on called function", async () => {
     userModelMock.create = jest
       .fn()
       .mockImplementation(() => Promise.resolve(mockUser));

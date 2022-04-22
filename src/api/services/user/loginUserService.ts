@@ -13,7 +13,7 @@ const loginUserService = async (
 
     const validatePassword = await validate(password, user.password);
 
-    if (!validatePassword) throw new Error("User nor found");
+    if (!validatePassword) throw new Error("User not Found");
 
     return createToken({ idUser: user.id });
   } catch (error: any) {
