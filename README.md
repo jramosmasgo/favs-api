@@ -1,18 +1,15 @@
 # FAVS API
 
-A sample node js api for company that aims to provide a better way to organize your favorite things: music, clothes, courses, etc., all in one place.
+Una node js api para empresa que tiene como objetivo proporcionar una mejor manera de organizar sus cosas favoritas: música, ropa, cursos, etc., todo en un solo lugar.
 
 ## PASOS
 
 **Note**  
-`La a `  
-This sample express with mondo database app.
+`La aplicación fue construida a partir de tecnologias como node js, mongo, mongoose.`
 
-## PARTE I: Descargar y construir el proyecto en su maquina local.
+## Descargar y construir el proyecto en su maquina local.
 
-## Method 1: Desde github
-
-### 1) Clone el repositorio, instalar los node packages y verificar las rutas.
+### 1) Clone el repositorio y instale los node packages.
 
 ```
 //en su equipo
@@ -21,18 +18,18 @@ cd favs-api
 npm install
 ```
 
-### 2) Una vez descargado el repositorio asegurese de tener instalado en su maquina local la base de datos de mongoDB y configurar el archivo .env
+### 2) Una vez descargado el repositorio asegurese de tener instalado en su maquina local la base de datos de mongoDB y configure el archivo .env
 
 **Note**  
-Si no desea instalar `mongo` puede usar una conextion remota.
+Si no desea instalar `mongo` puede usar una conexión remota como mongoDB Atlas.
 
 ```
-//Ejemplo de configuracion de archivo .env
-// Configuracion de puerto
+//Ejemplo de configuración de archivo .env
+// Configuración de puerto
 PORT=4000
-// Configuración de conexion a la base de datos
+// Configuración de conexión a la base de datos
 CONNECTION_DATABASE=mongodb://localhost/Favs
-// Configuracion de clave secreta para la generacion de json web token
+// Configuración de clave secreta para la generación de json web token
 JWT_SECRET=My5ecretPassword
 ```
 
@@ -46,14 +43,14 @@ npm start
 Abra su navegador preferido y acceda a la siguiente ruta y verifique que que mensaje `FAVS API running on port 4000`:  
 `http://localhost:4000`
 
-### 4) Ya verificado que la aplicacion este funcionando correctamente ya podemos probar los emdpoints.
+### 4) Ya verificado que la aplicacion este funcionando correctamente ya podemos probar los endpoints.
 
 **Nota:**  
 Para poder comprobar los endpoints es nesesario instalar un cliente rest como [POSTMAN](https://www.postman.com/downloads/)
 
 #### AUTH
 
-`POST` El siguiente endpoint sirve para crear un nuevo Usuario `https://my.mainframe.com:7554/api/v1/sample-node-api/accounts/`
+`POST` El siguiente endpoint sirve para crear un nuevo Usuario `http://localhost:4000/auth/local/register`
 
 ```
 //Objeto a enviar
@@ -64,7 +61,7 @@ Para poder comprobar los endpoints es nesesario instalar un cliente rest como [P
 }
 ```
 
-`POST` El siguiente endpoint nos permite inciar sesion en el aplicativo `https://my.mainframe.com:7554/api/v1/sample-node-api/accounts/1/`
+`POST` El siguiente endpoint nos permite inciar sesion en el aplicativo `http://localhost:4000/auth/local/login`
 
 **Nota:**  
 El endpoint nos devuelve un token que es nesesario para poder usar los siguientes endpoints.
@@ -98,8 +95,8 @@ Los siguiente endpoints requieren del token de autorizacion para poder llamarse.
 }
 ```
 
-`GET` Este endpoint obtiene una lista de favoritos creados por el usuario. `http://localhost:4000/favs`
+`GET` Este endpoint obtiene una lista de favoritos creados por el usuario. `http://localhost:4000/api/favs`
 
-`GET` Este endpoint obtiene una lista espcificada por el id ingresafo dentro de la url. `http://localhost:4000/favs/{id-de-lista}`
+`GET` Este endpoint obtiene una lista espcificada por el id ingresado dentro de la url. `http://localhost:4000/api/favs/{id-de-lista}`
 
-`DELETE` Este endpoint elimina una lista de favoriots espcificada por el id ingresafo dentro de la url. `http://localhost:4000/favs/{id-de-lista}`
+`DELETE` Este endpoint elimina una lista de favoritos espcificada por el id ingresado dentro de la url. `http://localhost:4000/api/favs/{id-de-lista}`

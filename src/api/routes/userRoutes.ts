@@ -8,13 +8,13 @@ import loginUserValidator from "../validators/user/loginUserValidator";
 const router = Router();
 
 router.post(
-  "/user",
+  "/register",
   contentValidator(createUserValidator),
   createUserController
 );
 
 router.post(
-  "/local/login",
+  "/login",
   contentValidator(loginUserValidator),
   loginUserController
 );

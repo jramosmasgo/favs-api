@@ -5,7 +5,7 @@ import { mockDatabase } from "../../utils/databaseMock";
 
 const api = supertest(app);
 const db = mockDatabase();
-const urlAPI = "/user";
+const urlAPI = "/auth/local/register";
 
 describe("Testing endpoint Create User", () => {
   beforeAll(async () => {

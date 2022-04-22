@@ -11,7 +11,7 @@ import { mockDatabase } from "../../utils/databaseMock";
 
 const api = supertest(app);
 const db = mockDatabase();
-const urlAPI = "/favs";
+const urlAPI = "/api/favs";
 let token: string = "";
 let favoritecreate: Favorite;
 
