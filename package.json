@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node-dev src/index.ts",
     "dev": "ts-node-dev src/index.ts",
-    "test": "jest  --config ./jest.config.ts"
+    "test": "jest  --config ./jest.config.ts",
+    "build": "tsc"
   },
   "author": "Jean Ramos",
   "license": "ISC",
