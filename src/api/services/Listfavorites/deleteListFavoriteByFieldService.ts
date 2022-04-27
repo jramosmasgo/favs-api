@@ -1,11 +1,11 @@
-import deleteFavoriteByFieldData from "../../data/favorites/deleteFavoriteByFieldData";
+import deleteListFavoriteByFieldData from "../../data/ListFavorites/deleteListFavoriteByFieldData";
 import { ApplicationError } from "../../interfaces/error";
 
-const deleteFavoriteByFieldService = async (
+const deleteListFavoriteByFieldService = async (
   filter: Object
 ): Promise<boolean> => {
   try {
-    const result = await deleteFavoriteByFieldData(filter);
+    const result = await deleteListFavoriteByFieldData(filter);
 
     if (!result) throw new Error("Error on delete favorite");
 
@@ -15,4 +15,4 @@ const deleteFavoriteByFieldService = async (
   }
 };
 
-export default deleteFavoriteByFieldService;
+export default deleteListFavoriteByFieldService;

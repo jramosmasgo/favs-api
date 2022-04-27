@@ -1,7 +1,7 @@
 import { Response, Request, NextFunction } from "express";
-import getAllFavoritesByFielService from "../../services/favorites/getAllFavoritesByFieldService";
 import ResponseApi from "../../core/responseApi";
-import { Favorite } from "../../interfaces/favorite";
+import { ListFav } from "../../interfaces/listFav";
+import getAllListFavoritesByFielService from "../../services/Listfavorites/getAllListFavoritesByFieldService";
 
 const getAllFavoritesByUserController = async (
   req: Request,
@@ -10,10 +10,10 @@ const getAllFavoritesByUserController = async (
 ) => {
   try {
     const { userID } = req.headers;
-    const result = await getAllFavoritesByFielService({
+    const result = await getAllListFavoritesByFielService({
       user: userID as string,
     });
-    new ResponseApi<Favorite[]>({
+    new ResponseApi<ListFav[]>({
       message: "List of Favorites",
       data: result,
     }).sendSuccess(res);

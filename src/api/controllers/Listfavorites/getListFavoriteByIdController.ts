@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import ResponseApi from "../../core/responseApi";
-import { Favorite } from "../../interfaces/favorite";
-import getFavoriteByFieldService from "../../services/favorites/getFavoriteByFieldService";
+import { ListFav } from "../../interfaces/listFav";
+import getListFavoriteByFieldService from "../../services/Listfavorites/getListFavoriteByFieldService";
 
 const getFavoriteByIdController = async (
   req: Request<{ id: string }, {}, {}>,
@@ -9,8 +9,8 @@ const getFavoriteByIdController = async (
   next: NextFunction
 ) => {
   try {
-    const result = await getFavoriteByFieldService({ _id: req.params.id });
-    new ResponseApi<Favorite>({
+    const result = await getListFavoriteByFieldService({ _id: req.params.id });
+    new ResponseApi<ListFav>({
       data: result,
       message: "Favorite Found",
     }).sendSuccess(res);
