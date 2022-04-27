@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node-dev src/index.ts",
     "dev": "ts-node-dev src/index.ts",
-    "test": "jest  --config ./jest.config.ts",
+    "test": "jest --config ./jest.config.ts",
+    "serve": "open http://localhost:4000/docs && npm start",
     "build": "tsc"
   },
   "author": "Jean Ramos",
@@ -32,6 +33,7 @@
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.0",
+    "open": "^8.4.0",
     "swagger-jsdoc": "^6.2.1",
     "swagger-ui-express": "^4.3.0",
     "yup": "^0.32.11"
