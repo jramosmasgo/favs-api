@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { MongoMemoryServer } from "mongodb-memory-server";
 
-export const mockDatabase = async () => {
+const mockDatabase = async () => {
   const mongoServer = await MongoMemoryServer.create();
 
   return {
@@ -31,3 +31,5 @@ export const mockDatabase = async () => {
     },
   };
 };
+
+export { mockDatabase };

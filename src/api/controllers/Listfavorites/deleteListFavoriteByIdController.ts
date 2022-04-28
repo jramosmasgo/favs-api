@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from "express";
-import deleteFavoriteByFieldService from "../../services/favorites/deleteFavoriteByFieldService";
 import ResponseApi from "../../core/responseApi";
+import deleteListFavoriteByFieldService from "../../services/Listfavorites/deleteListFavoriteByFieldService";
 
 const deleteFavoriteByIdController = async (
   req: Request<{ id: string }, {}, {}>,
@@ -8,9 +8,11 @@ const deleteFavoriteByIdController = async (
   next: NextFunction
 ) => {
   try {
-    const result = await deleteFavoriteByFieldService({ _id: req.params.id });
+    const result = await deleteListFavoriteByFieldService({
+      _id: req.params.id,
+    });
     new ResponseApi<boolean>({
-      message: "Favorited Removed",
+      message: "List Favorited Removed",
       data: result,
     }).sendSuccess(res);
   } catch (error) {
