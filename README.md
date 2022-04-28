@@ -24,12 +24,9 @@ npm install
 Si no desea instalar `mongo` puede usar una conexión remota como mongoDB Atlas.
 
 ```
-//Ejemplo de configuración de archivo .env
 // Configuración de puerto
 PORT=4000
-// Configuración de conexión a la base de datos
 CONNECTION_DATABASE=mongodb://localhost/Favs
-// Configuración de clave secreta para la generación de json web token
 JWT_SECRET=My5ecretPassword
 ```
 
@@ -46,6 +43,7 @@ Abra su navegador preferido y acceda a la siguiente ruta y verifique que que men
 ### 4) Ya verificado que la aplicacion este funcionando correctamente ya podemos probar los endpoints.
 
 **Nota:**  
+Para poder observar la docuemntacion de la API puede ingresar a la url `http://localhost:4000/docs`
 Para poder comprobar los endpoints es nesesario instalar un cliente rest como [POSTMAN](https://www.postman.com/downloads/)
 
 #### AUTH
@@ -84,14 +82,19 @@ Los siguiente endpoints requieren del token de autorizacion para poder llamarse.
 ```
 // Objeto a enviar
 {
-    "title":"titulo de la lista",
-    "description":"descripcion de la lista",
-    "url":"url",
-    "items":[
-        "item1",
-        "item2",
-        ...
-    ]
+  "name": "nombre de la lista",
+  "favs": [
+    {
+      "title": "titulo de elemento 1",
+      "description": "descripcion del elemento",
+      "link": "https://www.google.com"
+    },
+    {
+      "title": "titulo de elemento 2",
+      "description": "descripcion del elemento 2",
+      "link": "https://www.google2.com"
+    }
+  ]
 }
 ```
 
